@@ -10,7 +10,9 @@ namespace SystemMidterm_19070006058.Model
         [ForeignKey("House")]
         public int HouseId { get; set; }
         public int CustomerCount { get; set; }
+        [DataType(DataType.Date)]
         public DateTime DateFrom { get; set; }
+        [DataType(DataType.Date)]
         public DateTime DateTo { get; set; }
         
     }

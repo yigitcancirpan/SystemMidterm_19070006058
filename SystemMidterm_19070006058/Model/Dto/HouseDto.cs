@@ -7,8 +7,7 @@
         public string Description { get; set; }
         public int MaxCustomerCount { get; set; }
         public string City { get; set; }
-        public ICollection<Amenity> Amenities { get; set; }
-        public ICollection<Booking> Bookings { get; set; }
+        public bool IsAvailable { get; set; }
 
     }
     public class HouseResultDto : APIResultDto

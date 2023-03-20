@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SystemMidterm_19070006058.Context;
 
@@ -11,9 +12,11 @@ using SystemMidterm_19070006058.Context;
 namespace SystemMidterm_19070006058.Migrations
 {
     [DbContext(typeof(MidtermContext))]
-    partial class MidtermContextModelSnapshot : ModelSnapshot
+    [Migration("20230320062248_amenityhouse")]
+    partial class amenityhouse
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +44,7 @@ namespace SystemMidterm_19070006058.Migrations
 
                     b.HasIndex("HouseId");
 
-                    b.ToTable("Amenity", (string)null);
+                    b.ToTable("Amenity");
                 });
 
             modelBuilder.Entity("SystemMidterm_19070006058.Model.AmenityHouse", b =>
@@ -60,7 +63,7 @@ namespace SystemMidterm_19070006058.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AmenityHouse", (string)null);
+                    b.ToTable("AmenityHouse");
                 });
 
             modelBuilder.Entity("SystemMidterm_19070006058.Model.Booking", b =>
@@ -87,7 +90,7 @@ namespace SystemMidterm_19070006058.Migrations
 
                     b.HasIndex("HouseId");
 
-                    b.ToTable("Booking", (string)null);
+                    b.ToTable("Booking");
                 });
 
             modelBuilder.Entity("SystemMidterm_19070006058.Model.Customer", b =>
@@ -127,7 +130,7 @@ namespace SystemMidterm_19070006058.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Customers", (string)null);
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("SystemMidterm_19070006058.Model.House", b =>
@@ -158,7 +161,7 @@ namespace SystemMidterm_19070006058.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Houses", (string)null);
+                    b.ToTable("Houses");
                 });
 
             modelBuilder.Entity("SystemMidterm_19070006058.Model.UserModel", b =>
@@ -195,7 +198,7 @@ namespace SystemMidterm_19070006058.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("SystemMidterm_19070006058.Model.Amenity", b =>

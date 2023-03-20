@@ -61,6 +61,8 @@ builder.Services.AddMemoryCache();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IHouseService, HouseService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAmenityService, AmenityService>();
+builder.Services.AddScoped<IBookingService, BookingService>();
 
 
         

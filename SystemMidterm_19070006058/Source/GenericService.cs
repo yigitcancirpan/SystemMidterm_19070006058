@@ -4,7 +4,7 @@ namespace SystemMidterm_19070006058.Source
 {
     public class GenericService<T> : IGenericService<T> where T : class
     {
-        private MidtermContext _context;
+        public MidtermContext _context;
 
         public GenericService(MidtermContext context)
         {

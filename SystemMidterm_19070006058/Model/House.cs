@@ -15,7 +15,7 @@ namespace SystemMidterm_19070006058.Model
         public string City { get; set; }
 
         public bool IsAvaiable { get; set; }
-        public ICollection<Amenity> Amenities { get; set; }
-        public ICollection<Booking> Bookings { get; set; }
+        public ICollection<Amenity>? Amenities { get; set; }
+        public ICollection<Booking>? Bookings { get; set; }
     }
 }
