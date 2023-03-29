@@ -57,32 +57,27 @@ namespace SystemMidterm_19070006058.Controllers
             return ret;
         }
         [HttpPost("SearchHouse/{term}")]
-        public List<HouseDto> SearchHouse([Required] string term)
+        public List<House> SearchHouse([Required] string term)
         {
             var houses = _houseService.TGetAll().AsQueryable();
-            if (!string.IsNullOrEmpty(term))
-            {
-                houses = houses.Where(c =>
-                c.Name.Contains(term) ||
-                c.Description.Contains(term)
-                );
-            }
-            var houseDtos = new List<HouseDto>();
 
-            foreach (var house in houses)
+            var list = new List<House>();
+            //houses = houses.Where(c =>
+            //c.Name.Contains(term) ||
+            //c.Description.Contains(term)
+            //);
+            foreach (var item in houses)
             {
-                var houseDto = new HouseDto();
-                houseDto.Id = house.Id;
-                houseDto.Name = house.Name;
-                houseDto.Description = house.Description;
-                houseDto.City = house.City;
-                houseDto.MaxCustomerCount = house.MaxCustomerCount;
-                houseDtos.Add(houseDto);
+                if (item.Name.ToUpper().Contains(term.ToUpper()) || item.Description.ToUpper().Contains(term.ToUpper()))
+                {
+                    list.Add(item);
+                }
             }
 
-            return houseDtos;
+            //houses.ForEachAsync(house => houseDtos.Add(createHouseDto(house)));
+            return list;
         }
-        [HttpPost]
+        [HttpPost("QueryHouse")]
         public List<HouseDto> QueryHouse(int countOfPeople, [Required]string DateFrom, [Required] string DateTo, QueryWithPagingDto query)
         {
             var houses = _houseService.TGetAll();

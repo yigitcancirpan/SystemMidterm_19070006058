@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/SystemMidterm19070006058api/apis/SystemMidterm19070006058",
+      "type": "apis.azure"
+    }
+  }
+}
